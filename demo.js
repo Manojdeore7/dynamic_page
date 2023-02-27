@@ -1,7 +1,17 @@
 let nme=document.getElementById("name");
 let email=document.getElementById("email");
 let sub=document.getElementById("submit");
-
+window.addEventListener("DOMContentLoaded",()=>{
+    axios
+         .get("https://crudcrud.com/api/47db31077454481e8c8a9e5b4f854c8e/AddData")
+         .then((res)=>{
+            arr=res.data||[];
+            dispaly(arr);
+         })
+         .catch((er)=>{
+            console.log(er)
+         })
+})
 sub.addEventListener("click",(ex)=>{
     ex.preventDefault();
     // let obj={
